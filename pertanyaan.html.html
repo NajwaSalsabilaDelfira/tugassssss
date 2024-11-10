@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Teori</title>
+    <style>
+        /* Gaya dasar */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Gaya untuk tampilan rapi */
+        body.rapi {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #567c8d;
+            background-color: #ffffff;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Judul dan Sub Judul */
+        h1 {
+            color: #ffffff;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #000000;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        /* Gaya untuk sub judul */
+        h3 {
+            color: #567c8d;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #e0f3ff;
+            border-radius: 5px;
+            margin: 15px 0;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+        }
+
+        h3:hover {
+            background-color: #c8d9e6;
+            color: #000000;
+        }
+
+        /* Gaya untuk konten */
+        .content {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            background-color: #ffffff;
+            text-align: justify;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        em {
+            font-style: italic;
+            color: #3366cc;
+        }
+
+        /* Gaya untuk tombol */
+        #toggle-mode {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px auto;
+            background-color: #c8d9e6;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #toggle-mode:hover {
+            background-color: #e3f5f9;
+        }
+
+        /* Gaya untuk tampilan berantakan */
+        body.berantakan {
+            font-family: Comic Sans MS, cursive, sans-serif;
+            color: #ff69b4;
+            background-color: #ff21da;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color: #000000;
+            text-align: center;
+        }
+        h3 {
+            background-color: #567c8d;
+            color: #000000;
+        }
+        .content {
+            background-color: #c8d9e6;
+            color: #2f4f4f;
+            border-color: #b3e0ff;
+        }
+    </style>
+</head>
+<body class="rapi">
+    <!-- Judul dan Sub Judul -->
+    <h1>LAPORAN TEORI</h1>
+    <h2>Najwa Salsabila Delfira | 202331212</h2>
+
+    <!-- Tombol untuk mengubah mode tampilan -->
+    <button id="toggle-mode" onclick="toggleMode()">Ganti Mode Tampilan</button>
+
+    <!-- Konten Laporan Teori -->
+    <h3 onclick="toggleContent(this)">Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
+    <p class="content">CSS adalah bahasa yang digunakan untuk mengatur tampilan halaman web, termasuk warna, tata letak, dan font. <em>JavaScript</em> adalah bahasa pemrograman yang memungkinkan halaman web menjadi dinamis dan interaktif.</p>
+
+    <h3 onclick="toggleContent(this)">Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+    <p class="content">Integrasi CSS dan JavaScript dalam pemrograman web menciptakan antarmuka menarik dan interaktif, dengan pengaturan file eksternal dan manipulasi elemen DOM untuk pengalaman pengguna optimal.</p>
+
+    <h3 onclick="toggleContent(this)">Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
+    <p class="content">CSS mempercepat loading halaman web, memudahkan pengolahan kode, dan membuat tampilan lebih rapi di berbagai ukuran layar. <em>JavaScript</em> membuat situs lebih dinamis dan interaktif.</p>
+
+    <h3 onclick="toggleContent(this)">Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
+    <p class="content">Menggunakan Bootstrap membantu dalam menciptakan halaman web yang responsif dan estetis, serta mempercepat proses pengembangan dengan komponen siap pakai yang didukung oleh komunitas besar.</p>
+
+    <h3 onclick="toggleContent(this)">Contoh penggunaan Bootstrap</h3>
+    <p class="content">Navbar dalam Bootstrap memudahkan pengguna untuk bernavigasi di situs web. Dengan Bootstrap, navbar ini responsif, menjadi tombol dropdown di layar kecil.</p>
+
+    <script>
+        // Fungsi untuk menyembunyikan atau menampilkan konten
+        function toggleContent(element) {
+            if (confirm("Apakah Anda ingin menyembunyikan konten ini?")) {
+                let content = element.nextElementSibling;
+                content.style.display = (content.style.display === "none") ? "block" : "none";
+            }
+        }
+
+        // Fungsi untuk mengganti mode tampilan antara rapi dan berantakan
+        function toggleMode() {
+            document.body.classList.toggle("rapi");
+            document.body.classList.toggle("berantakan");
+        }
+    </script>
+</body>
+</html>
+
